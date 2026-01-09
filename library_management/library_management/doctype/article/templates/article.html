@@ -1,0 +1,42 @@
+{% extends "templates/web.html" %}
+
+{% block page_content %}
+
+<div class="container py-5">
+  <div class="row">
+    
+    <!-- LEFT: IMAGE -->
+    <div class="col-md-3">
+      {% if image %}
+        <img src="{{ image }}" class="img-fluid rounded mb-3" alt="{{ title }}">
+      {% endif %}
+    </div>
+
+    <!-- RIGHT: CONTENT -->
+    <div class="col-md-9">
+      <h1>{{ title }}</h1>
+
+      <p class="text-muted">
+        <strong>Author:</strong> {{ author }}
+      </p>
+
+      {% if status == "Available" %}
+        <span class="badge bg-success">Available</span>
+      {% elif status == "Issued" %}
+        <span class="badge bg-primary">Issued</span>
+      {% endif %}
+
+      <hr>
+
+      <p><strong>Publisher:</strong> {{ publisher }}</p>
+      <p><strong>ISBN:</strong> {{ isbn }}</p>
+
+      <div class="mt-4">
+        {{ description }}
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

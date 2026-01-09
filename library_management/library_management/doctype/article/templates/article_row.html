@@ -1,0 +1,16 @@
+<div class="py-5 row">
+  
+  <!-- IMAGE COLUMN -->
+  <div class="col-md-3">
+    {% if doc.image %}
+      <img alt="{{ doc.name }}" src="{{ doc.image }}" class="img-fluid">
+    {% endif %}
+  </div>
+
+  <!-- CONTENT COLUMN -->
+  <div class="col-md-9">
+    <h1 class="text-uppercase border-bottom">{{ doc.name }}</h1>
+    <p class="text-muted">{{ doc.author }}</p>
+  </div>
+
+</div>
