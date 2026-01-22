@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "LMS.#####",
+ "autoname": "field:full_name",
  "creation": "2026-01-08 12:40:17.951852",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -13,7 +13,10 @@
   "column_break_gorg",
   "from_date",
   "to_date",
-  "paid"
+  "paid",
+  "membership_plan_section",
+  "months",
+  "cost_per_month"
  ],
  "fields": [
   {
@@ -40,7 +43,8 @@
    "fetch_from": "library_member.full_name",
    "fieldname": "full_name",
    "fieldtype": "Data",
-   "label": "Full Name"
+   "label": "Full Name",
+   "unique": 1
   },
   {
    "fieldname": "column_break_gorg",
@@ -61,17 +65,33 @@
    "fieldname": "paid",
    "fieldtype": "Check",
    "label": "Paid"
+  },
+  {
+   "fieldname": "membership_plan_section",
+   "fieldtype": "Section Break",
+   "label": "Membership Plan"
+  },
+  {
+   "fieldname": "months",
+   "fieldtype": "Int",
+   "label": "Months"
+  },
+  {
+   "default": "200",
+   "fieldname": "cost_per_month",
+   "fieldtype": "Currency",
+   "label": "Cost per month"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-01-08 13:10:58.633104",
+ "modified": "2026-01-19 18:00:02.821951",
  "modified_by": "Administrator",
  "module": "Library Management",
  "name": "Library Membership",
- "naming_rule": "Expression (old style)",
+ "naming_rule": "By fieldname",
  "owner": "Administrator",
  "permissions": [
   {

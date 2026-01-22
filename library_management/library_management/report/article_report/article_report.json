@@ -1,0 +1,60 @@
+{
+ "add_total_row": 0,
+ "add_translate_data": 0,
+ "columns": [],
+ "creation": "2026-01-19 07:52:08.562781",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "mandatory": 1,
+   "options": "Available \nIssued",
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "creation_date",
+   "fieldtype": "Date",
+   "label": "Creation Date",
+   "mandatory": 0,
+   "wildcard_filter": 0
+  },
+  {
+   "fieldname": "isbn",
+   "fieldtype": "Data",
+   "label": "ISBN",
+   "mandatory": 0,
+   "wildcard_filter": 0
+  }
+ ],
+ "idx": 0,
+ "is_standard": "Yes",
+ "json": "{}",
+ "letter_head": null,
+ "modified": "2026-01-19 10:54:56.264680",
+ "modified_by": "Administrator",
+ "module": "Library Management",
+ "name": "Article Report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT\n    article_name AS \"Article Name:Data:200\",\n    author AS \"Author:Data:150\",\n    isbn AS \"ISBN:Data:120\",\n    publisher AS \"Publisher:Data:150\",\n    status AS \"Status:Data:120\",\n    creation AS \"Creation Date:Date:120\"\nFROM\n    `tabArticle`\nWHERE\n    (%(status)s IS NULL OR status = %(status)s)\n    AND (%(isbn)s IS NULL OR isbn = %(isbn)s)\nORDER BY\n    creation DESC\n",
+ "ref_doctype": "Article",
+ "report_name": "Article Report",
+ "report_script": "",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "Librarian"
+  },
+  {
+   "role": "Library Member"
+  }
+ ],
+ "timeout": 0
+}
