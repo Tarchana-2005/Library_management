@@ -20,5 +20,9 @@ class LibraryMember(Document):
 				"name" : ("!=",self.name)
 				}):
 				frappe.throw("Email already exists for another person")
+
+
+
+
 				
 	

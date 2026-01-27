@@ -140,8 +140,8 @@ class LibraryTransaction(Document):
             {
                 "library_member": self.library_member,
                 "docstatus": DocStatus.submitted(),
-                "from_date": ("<", self.date),
-                "to_date": (">", self.date),
+                "from_date": ("<=", self.date),
+                "to_date": (">=", self.date),
             },
         )
 
@@ -211,3 +211,18 @@ def get_issued_articles(doctype, txt, searchfield, start, page_len, filters):
         "limit": page_len,
         "start": start
     })
+
+# @frappe.whitelist()
+# def get_member_issued_books(member):
+
+#     return frappe.get_all(
+#         "Library Transaction",
+#         filters={
+#             "type": "Issue",
+#             "library_member": member,
+#             "issue_transaction": ["is", "not set"],
+#             "docstatus": 1
+#         },
+#         fields=["article", "date"],
+#         order_by="date desc"
+#     )

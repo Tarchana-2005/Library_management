@@ -19,6 +19,10 @@ def execute(filters=None):
         conditions.append("lt.type = %(type)s")
         values["type"] = filters.get("type")
 
+    if filters.get("issue_transaction") == "not_set":
+        conditions.append("lt.issue_transaction IS NULL")
+
+
     where = ""
     if conditions:
         where = "WHERE " + " AND ".join(conditions)
