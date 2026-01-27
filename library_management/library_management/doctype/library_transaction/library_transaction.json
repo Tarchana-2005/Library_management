@@ -7,12 +7,13 @@
  "engine": "InnoDB",
  "field_order": [
   "section_break_rsio",
-  "amended_from",
-  "article",
   "library_member",
-  "column_break_cjrl",
   "type",
-  "date"
+  "article",
+  "column_break_cjrl",
+  "date",
+  "issue_transaction",
+  "amended_from"
  ],
  "fields": [
   {
@@ -32,8 +33,10 @@
   {
    "fieldname": "article",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Article",
-   "options": "Article"
+   "options": "Article",
+   "reqd": 1
   },
   {
    "fieldname": "library_member",
@@ -55,14 +58,21 @@
    "fieldname": "date",
    "fieldtype": "Date",
    "label": "Date"
+  },
+  {
+   "fieldname": "issue_transaction",
+   "fieldtype": "Link",
+   "label": "Issue_transaction",
+   "options": "Library Transaction",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-01-08 15:34:25.429276",
- "modified_by": "Administrator",
+ "modified": "2026-01-27 06:27:23.633661",
+ "modified_by": "admin@123.com",
  "module": "Library Management",
  "name": "Library Transaction",
  "naming_rule": "Expression (old style)",
